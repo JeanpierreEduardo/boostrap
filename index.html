@@ -1,11 +1,145 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff9f4">
+  <meta name="description" content="Dulce Aurora: una pastelería online de demostración. Explora tortas, postres y galletas, agrégalos al carrito y realiza un pedido ficticio.">
+  <title>Dulce Aurora · Un poquito de felicidad en cada bocado</title>
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-    hello world!
+  <div class="announce-bar text-center">✨ Hecho con amor, servido con dulzura <span class="mx-2">·</span> Envío gratis desde S/ 90 <span class="mx-2">·</span> <strong>TIENDA DEMO</strong></div>
+  <header class="sticky-top header-wrap">
+    <nav class="navbar navbar-expand-lg" aria-label="Navegación principal">
+      <div class="container py-2">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="#inicio" aria-label="Dulce Aurora, ir al inicio">
+          <img src="assets/img/favicon.svg" width="43" height="43" alt="" class="brand-mark">
+          <span class="brand-text"><span>Dulce <em>Aurora</em></span><small>PASTELERÍA ARTESANAL</small></span>
+        </a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Abrir menú"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav mx-auto gap-lg-3 mt-3 mt-lg-0">
+            <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="#catalogo">Nuestros postres</a></li>
+            <li class="nav-item"><a class="nav-link" href="#nosotros">Nuestra historia</a></li>
+            <li class="nav-item"><a class="nav-link" href="#opiniones">Reseñas</a></li>
+          </ul>
+          <div class="d-flex gap-2 align-items-center mt-3 mt-lg-0 nav-actions">
+            <button id="accountButton" type="button" class="btn btn-account" aria-label="Iniciar sesión"><i class="bi bi-person-circle me-1"></i><span id="accountLabel">Mi cuenta</span></button>
+            <button type="button" class="btn btn-cart" data-bs-toggle="offcanvas" data-bs-target="#cartCanvas" aria-controls="cartCanvas" aria-label="Abrir carrito"><i class="bi bi-bag-heart me-2"></i>Carrito <span id="cartCount" class="cart-count">0</span></button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero-section">
+      <div class="container">
+        <div class="row align-items-center gy-5">
+          <div class="col-lg-6 hero-copy">
+            <span class="eyebrow"><span class="eyebrow-dot"></span> HORNEAMOS MOMENTOS BONITOS</span>
+            <h1 class="hero-title mt-4">La vida sabe <span>más dulce</span> con un buen postre.</h1>
+            <p class="hero-description mt-4">Tortas, galletitas y pequeñas delicias hechas para celebrar los grandes momentos y también los de todos los días.</p>
+            <div class="d-flex flex-wrap gap-3 mt-4"><a class="btn btn-primary-aurora btn-lg" href="#catalogo">Explorar postres <i class="bi bi-arrow-up-right ms-2"></i></a><a class="btn btn-outline-aurora btn-lg" href="#nosotros">Conócenos</a></div>
+            <div class="hero-social mt-5 d-flex align-items-center gap-3"><div class="avatar-stack"><span>😊</span><span>🥰</span><span>😍</span></div><div><strong>Un antojito para cada ocasión</strong><small>Preparados con detalle y mucho cariño</small></div></div>
+          </div>
+          <div class="col-lg-6">
+            <div class="hero-visual">
+              <div class="hero-blob"></div>
+              <img class="hero-photo" src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&amp;fit=crop&amp;w=1050&amp;q=85" data-fallback="assets/img/hero-cake.svg" onerror="this.onerror=null;this.src=this.dataset.fallback" alt="Deliciosa torta artesanal con crema" fetchpriority="high">
+              <span class="hero-sparkle one">✧</span><span class="hero-sparkle two">✧</span>
+              <div class="hero-sticker"><i class="bi bi-heart-fill"></i><div><b>Hecho a mano</b><small>Con ingredientes deliciosos</small></div></div>
+              <div class="hero-circle-text">100% <small>ANTOJO</small></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits-bar" aria-label="Beneficios">
+      <div class="container"><div class="row gy-3 gx-4">
+        <div class="col-md-4"><div class="benefit"><span class="benefit-icon"><i class="bi bi-gift"></i></span><div><strong>Hecho para regalar</strong><small>Detalles que alegran cualquier día</small></div></div></div>
+        <div class="col-md-4"><div class="benefit"><span class="benefit-icon"><i class="bi bi-heart"></i></span><div><strong>Ingredientes con cariño</strong><small>Cada receta tiene su magia</small></div></div></div>
+        <div class="col-md-4"><div class="benefit"><span class="benefit-icon"><i class="bi bi-truck"></i></span><div><strong>Delivery de demostración</strong><small>Gratis desde S/ 90 en esta demo</small></div></div></div>
+      </div></div>
+    </section>
+
+    <section id="catalogo" class="section-pad products-section">
+      <div class="container">
+        <div class="text-center mb-4"><span class="section-kicker">NUESTROS FAVORITOS</span><h2 class="section-title mt-2">Un mundo de <em>dulzura</em></h2><p class="section-subtitle mx-auto mt-3">De los clásicos de siempre a nuevos caprichos. ¿Con cuál te vas a consentir hoy?</p></div>
+        <div class="catalog-toolbar d-flex align-items-center flex-wrap justify-content-between gap-3 mb-4">
+          <div class="filter-pills d-flex flex-wrap gap-2" role="group" aria-label="Filtrar por categoría">
+            <button type="button" class="filter-pill active" data-category="todos" aria-pressed="true">Todos</button>
+            <button type="button" class="filter-pill" data-category="tortas" aria-pressed="false">🎂 Tortas</button>
+            <button type="button" class="filter-pill" data-category="porciones" aria-pressed="false">🍰 Porciones</button>
+            <button type="button" class="filter-pill" data-category="bocaditos" aria-pressed="false">🍪 Bocaditos</button>
+          </div>
+          <div class="d-flex align-items-center flex-wrap gap-2">
+            <label for="searchInput" class="visually-hidden">Buscar un postre</label><div class="search-box"><i class="bi bi-search"></i><input id="searchInput" type="search" class="form-control" placeholder="Buscar un antojito..." autocomplete="off"></div>
+            <label for="sortSelect" class="visually-hidden">Ordenar productos</label><select id="sortSelect" class="form-select sort-select"><option value="featured">Destacados</option><option value="low">Menor precio</option><option value="high">Mayor precio</option><option value="name">Nombre A–Z</option></select>
+          </div>
+        </div>
+        <div id="productGrid" class="row g-4" aria-live="polite"></div>
+        <div id="emptyCatalog" class="empty-catalog text-center d-none"><i class="bi bi-search-heart fs-1"></i><h3>No encontramos ese postre</h3><p>Prueba otra búsqueda o descubre todo el catálogo.</p><button id="resetFilters" class="btn btn-primary-aurora">Ver todos los postres</button></div>
+        <p id="productResult" class="text-center small text-muted mt-4" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <section class="promo-section"><div class="container"><div class="promo-banner"><div class="promo-decor decor-left">✦</div><div class="promo-content"><span class="promo-label">UN REGALITO PARA TI</span><h2>Hay días que merecen <em>algo dulce.</em></h2><p>Usa el cupón <strong>DULCE10</strong> en tu carrito y obtén <strong>10% de descuento</strong> en esta tienda de demostración.</p><a href="#catalogo" class="btn btn-light promo-btn">Elegir mis favoritos <i class="bi bi-arrow-right ms-2"></i></a></div><div class="promo-illustration" aria-hidden="true">🧁 <span>♡</span></div></div></div></section>
+
+    <section id="nosotros" class="section-pad story-section"><div class="container"><div class="row align-items-center g-5">
+      <div class="col-lg-6"><div class="story-visual"><img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&amp;fit=crop&amp;w=1000&amp;q=85" data-fallback="assets/img/story.svg" onerror="this.onerror=null;this.src=this.dataset.fallback" alt="Pasteles recién horneados en una mesa" loading="lazy"><div class="story-label"><span>♡</span> Un poquito de magia en cada receta</div></div></div>
+      <div class="col-lg-6 ps-lg-5"><span class="section-kicker">NUESTRA ESENCIA</span><h2 class="section-title mt-3">Pequeños detalles,<br><em>grandes sonrisas.</em></h2><p class="story-description mt-4">En Dulce Aurora creemos que los mejores recuerdos suelen comenzar con algo rico para compartir. Por eso imaginamos una pastelería cálida, llena de color y recetas para enamorarse.</p><p class="story-description">Este sitio es un proyecto de comercio electrónico de demostración, creado para mostrar la experiencia de comprar postres en línea.</p><div class="story-points d-flex flex-wrap gap-4 mt-4"><div><i class="bi bi-check-circle-fill"></i> Diseño artesanal</div><div><i class="bi bi-check-circle-fill"></i> Pedido fácil</div><div><i class="bi bi-check-circle-fill"></i> Compra simulada</div></div><a href="#catalogo" class="btn btn-primary-aurora mt-4">Descubre el menú <i class="bi bi-arrow-right ms-2"></i></a></div>
+    </div></div></section>
+
+    <section id="opiniones" class="section-pad reviews-section"><div class="container"><div class="text-center mb-5"><span class="section-kicker">PALABRAS BONITAS</span><h2 class="section-title mt-2">Lo que dicen nuestros <em>fans ficticios</em></h2><p class="section-subtitle mx-auto mt-3">Estas opiniones son ejemplos para ilustrar el diseño.</p></div><div class="row g-4">
+      <div class="col-md-4"><article class="review-card h-100"><div class="stars" aria-label="5 estrellas">★★★★★</div><p>“Los colores y los postres se ven preciosos. ¡Dan ganas de probar absolutamente todo!”</p><div class="review-author"><span class="review-avatar">M</span><div><strong>María G.</strong><small>Opinión de ejemplo</small></div></div></article></div>
+      <div class="col-md-4"><article class="review-card h-100"><div class="stars" aria-label="5 estrellas">★★★★★</div><p>“Me encantó lo sencillo que es agregar productos al carrito y revisar el pedido.”</p><div class="review-author"><span class="review-avatar peach">D</span><div><strong>Daniel R.</strong><small>Opinión de ejemplo</small></div></div></article></div>
+      <div class="col-md-4"><article class="review-card h-100"><div class="stars" aria-label="5 estrellas">★★★★★</div><p>“¡La presentación está increíble! El catálogo es bonito y se adapta genial a mi celular.”</p><div class="review-author"><span class="review-avatar cream">L</span><div><strong>Lucía T.</strong><small>Opinión de ejemplo</small></div></div></article></div>
+    </div></div></section>
+
+    <section class="newsletter-section"><div class="container"><div class="newsletter-content"><div><span class="section-kicker">UN POQUITO MÁS DE DULZURA</span><h2>Que nunca falte <em>un buen antojo.</em></h2><p>Suscríbete al boletín de demostración. No se enviarán correos reales.</p></div><form id="newsletterForm" class="newsletter-form d-flex flex-column flex-sm-row gap-2"><label for="newsletterEmail" class="visually-hidden">Tu correo electrónico</label><input id="newsletterEmail" type="email" class="form-control" placeholder="Tu correo electrónico" required maxlength="150"><button type="submit" class="btn btn-primary-aurora text-nowrap">Suscribirme <i class="bi bi-arrow-right ms-1"></i></button></form></div></div></section>
+  </main>
+
+  <footer class="site-footer"><div class="container"><div class="row gy-4 pb-5">
+    <div class="col-lg-5"><a class="d-inline-flex align-items-center gap-2 footer-brand" href="#inicio"><img src="assets/img/favicon.svg" width="44" height="44" alt=""><span>Dulce <em>Aurora</em></span></a><p class="footer-description mt-3">La felicidad a veces tiene forma de postre. Una tienda ficticia hecha para demostrar cómo funciona un e-commerce.</p><div class="social-icons"><span title="Redes ficticias"><i class="bi bi-instagram"></i></span><span title="Redes ficticias"><i class="bi bi-facebook"></i></span><span title="Redes ficticias"><i class="bi bi-tiktok"></i></span></div></div>
+    <div class="col-6 col-lg-2"><h3>Explorar</h3><a href="#inicio">Inicio</a><a href="#catalogo">Postres</a><a href="#nosotros">Nosotros</a><a href="#opiniones">Reseñas</a></div>
+    <div class="col-6 col-lg-2"><h3>Mi experiencia</h3><button type="button" id="footerAccount" class="footer-link-btn">Mi cuenta</button><button type="button" id="footerOrders" class="footer-link-btn">Mis pedidos</button><button type="button" class="footer-link-btn" data-bs-toggle="offcanvas" data-bs-target="#cartCanvas">Ver carrito</button></div>
+    <div class="col-lg-3"><h3>Información</h3><p class="footer-detail"><i class="bi bi-geo-alt"></i> Tienda virtual ficticia · Perú</p><p class="footer-detail"><i class="bi bi-envelope"></i> hola@dulceaurora.ejemplo</p><p class="footer-detail"><i class="bi bi-clock"></i> Horarios ilustrativos</p></div>
+  </div><div class="footer-bottom d-flex flex-wrap align-items-center justify-content-between gap-2"><span>© <span id="year"></span> Dulce Aurora · Proyecto demostrativo.</span><span>Bootstrap 5 · HTML, CSS y JavaScript · Sin cobros reales <i class="bi bi-heart-fill"></i></span></div></div></footer>
+
+  <!-- CARRITO -->
+  <div class="offcanvas offcanvas-end cart-offcanvas" tabindex="-1" id="cartCanvas" aria-labelledby="cartTitle"><div class="offcanvas-header"><div><span class="section-kicker">TUS ANTOJITOS</span><h2 class="offcanvas-title" id="cartTitle">Mi carrito <span class="cart-title-emoji">🛍️</span></h2></div><button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar carrito"></button></div><div class="offcanvas-body d-flex flex-column"><div id="cartItems" class="cart-items flex-grow-1"></div><div id="cartSummary" class="cart-summary d-none"><form id="couponForm" class="coupon-row mb-3"><label for="couponInput" class="visually-hidden">Cupón de descuento</label><input id="couponInput" class="form-control" placeholder="¿Tienes un cupón?" maxlength="30"><button class="btn" type="submit">Aplicar</button></form><div id="couponMessage" class="coupon-message" aria-live="polite"></div><div class="summary-line"><span>Subtotal</span><strong id="subtotalValue">S/ 0.00</strong></div><div class="summary-line"><span>Descuento</span><strong id="discountValue">S/ 0.00</strong></div><div class="summary-line"><span>Delivery</span><strong id="shippingValue">S/ 0.00</strong></div><div class="shipping-hint" id="shippingHint"></div><div class="summary-total"><span>Total</span><strong id="totalValue">S/ 0.00</strong></div><button id="checkoutButton" class="btn btn-primary-aurora w-100 py-3 mt-3" type="button">Finalizar pedido <i class="bi bi-arrow-right ms-2"></i></button><small class="secure-notice"><i class="bi bi-shield-check me-1"></i> Pago 100% ficticio · No se cobrará dinero</small></div></div></div>
+
+  <!-- AUTENTICACIÓN DE DEMOSTRACIÓN -->
+  <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authTitle" aria-hidden="true"><div class="modal-dialog modal-dialog-centered auth-dialog"><div class="modal-content"><div class="modal-header border-0 pb-0"><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button></div><div class="modal-body px-4 px-sm-5 pb-5"><div class="text-center mb-4"><img src="assets/img/favicon.svg" alt="" width="60" height="60"><h2 id="authTitle" class="modal-display mt-3">¡Qué alegría verte!</h2><p class="text-muted mb-0" id="authSubtitle">Accede a tu rinconcito de dulzura.</p></div><div class="auth-tabs mb-4"><button type="button" class="active" id="loginTab" aria-pressed="true">Iniciar sesión</button><button type="button" id="registerTab" aria-pressed="false">Crear cuenta</button></div><form id="authForm"><div id="registerNameGroup" class="mb-3 d-none"><label for="authName" class="form-label">Tu nombre</label><input id="authName" type="text" class="form-control auth-control" placeholder="¿Cómo te llamas?" autocomplete="name" minlength="2" maxlength="60"></div><div class="mb-3"><label for="authEmail" class="form-label">Correo electrónico</label><input id="authEmail" type="email" class="form-control auth-control" placeholder="nombre@correo.com" autocomplete="email" required maxlength="150"></div><div class="mb-3"><label for="authPassword" class="form-label">Contraseña</label><div class="password-wrapper"><input id="authPassword" type="password" class="form-control auth-control" placeholder="Mínimo 8 caracteres" autocomplete="current-password" required minlength="8" maxlength="128"><button type="button" id="togglePassword" aria-label="Mostrar contraseña"><i class="bi bi-eye"></i></button></div></div><div id="authError" class="form-error d-none" role="alert"></div><button type="submit" id="authSubmit" class="btn btn-primary-aurora w-100 py-3 mt-2">Ingresar a mi cuenta</button></form><button type="button" id="demoLogin" class="btn btn-link text-decoration-none w-100 mt-2 small">Entrar con una cuenta de prueba</button><p class="auth-disclaimer mt-2 mb-0"><i class="bi bi-info-circle me-1"></i> Acceso local para pruebas. No uses contraseñas reales. No es un sistema de autenticación de producción.</p></div></div></div></div>
+
+  <!-- PERFIL -->
+  <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileTitle" aria-hidden="true"><div class="modal-dialog modal-dialog-centered modal-sm"><div class="modal-content profile-content"><div class="modal-header border-0"><button class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button></div><div class="modal-body text-center px-4 pb-4"><div class="profile-avatar"><i class="bi bi-person-heart"></i></div><h2 id="profileTitle" class="modal-display mt-3">¡Hola!</h2><p id="profileEmail" class="text-muted"></p><button id="profileOrders" class="btn btn-primary-aurora w-100 mb-2">Ver mis pedidos</button><button id="logoutButton" class="btn btn-outline-aurora w-100">Cerrar sesión</button></div></div></div></div>
+
+  <!-- VISTA RÁPIDA -->
+  <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalTitle" aria-hidden="true"><div class="modal-dialog modal-dialog-centered modal-lg"><div class="modal-content product-modal"><div class="modal-header border-0"><button class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button></div><div class="modal-body pt-0 pb-4 px-4"><div id="productDetail"></div></div></div></div></div>
+
+  <!-- CHECKOUT -->
+  <div class="modal fade" id="checkoutModal" tabindex="-1" aria-labelledby="checkoutTitle" aria-hidden="true"><div class="modal-dialog modal-dialog-centered modal-lg"><div class="modal-content checkout-content"><div class="modal-header"><div><span class="section-kicker">ÚLTIMO PASITO</span><h2 class="modal-display" id="checkoutTitle">Finaliza tu pedido</h2></div><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button></div><div class="modal-body"><div class="demo-notice"><i class="bi bi-shield-check"></i><div><strong>Este es un pago de demostración.</strong><br>No ingreses datos bancarios reales. No se procesará ningún cobro ni envío.</div></div><form id="checkoutForm"><div class="row g-3"><div class="col-md-6"><label for="checkoutName" class="form-label">Nombre para el pedido</label><input id="checkoutName" class="form-control auth-control" autocomplete="name" required minlength="2" maxlength="80"></div><div class="col-md-6"><label for="checkoutEmail" class="form-label">Correo electrónico</label><input id="checkoutEmail" type="email" class="form-control auth-control" autocomplete="email" required maxlength="150"></div><div class="col-md-8"><label for="checkoutAddress" class="form-label">Dirección de entrega (ficticia)</label><input id="checkoutAddress" class="form-control auth-control" placeholder="Av. Ejemplo 123" required minlength="6" maxlength="180"></div><div class="col-md-4"><label for="checkoutDistrict" class="form-label">Distrito / ciudad</label><input id="checkoutDistrict" class="form-control auth-control" placeholder="Huancayo" required minlength="2" maxlength="80"></div><div class="col-12"><label for="checkoutNote" class="form-label">Mensaje especial <span class="text-muted fw-normal">(opcional)</span></label><textarea id="checkoutNote" class="form-control auth-control" rows="2" maxlength="250" placeholder="¡Feliz cumpleaños! 🎉"></textarea></div></div><h3 class="checkout-subheading mt-4">Método de pago <span class="text-muted fw-normal small">(simulado)</span></h3><div class="payment-options"><label class="payment-option"><input type="radio" name="payMethod" value="Tarjeta de demostración" checked><span><i class="bi bi-credit-card-2-front"></i> Tarjeta demo <small>Sin datos bancarios</small></span></label><label class="payment-option"><input type="radio" name="payMethod" value="Yape de demostración"><span><i class="bi bi-phone"></i> Yape demo <small>Sin transferencias</small></span></label><label class="payment-option"><input type="radio" name="payMethod" value="Contraentrega simulada"><span><i class="bi bi-cash-coin"></i> Contraentrega <small>Solo simulación</small></span></label></div><div class="checkout-summary mt-4"><span>Importe total del pedido</span><strong id="checkoutTotal">S/ 0.00</strong></div><button class="btn btn-primary-aurora w-100 py-3 mt-3" type="submit" id="confirmOrderButton">Confirmar compra ficticia <i class="bi bi-lock ms-2"></i></button></form></div></div></div></div>
+
+  <!-- ÉXITO -->
+  <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successTitle" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-body text-center p-5"><div class="success-icon"><i class="bi bi-check2"></i></div><span class="section-kicker">¡TODO LISTO!</span><h2 id="successTitle" class="modal-display mt-2">¡Pedido confirmado!</h2><p class="text-muted mt-3">Tu compra ficticia se registró en este navegador. No se ha realizado ningún cobro ni entrega real.</p><div class="success-order"><span>Número de pedido</span><strong id="successOrderNumber"></strong><span>Total simulado</span><strong id="successOrderTotal"></strong></div><button class="btn btn-primary-aurora w-100 mt-4" data-bs-dismiss="modal">Seguir explorando <i class="bi bi-heart ms-2"></i></button></div></div></div></div>
+
+  <!-- PEDIDOS -->
+  <div class="modal fade" id="ordersModal" tabindex="-1" aria-labelledby="ordersTitle" aria-hidden="true"><div class="modal-dialog modal-dialog-centered modal-lg"><div class="modal-content"><div class="modal-header"><div><span class="section-kicker">TUS RECUERDOS DULCES</span><h2 id="ordersTitle" class="modal-display">Mis pedidos</h2></div><button class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button></div><div class="modal-body"><div id="ordersList"></div></div></div></div></div>
+
+  <div class="toast-container position-fixed bottom-0 end-0 p-3"><div id="appToast" class="toast toast-aurora" role="status" aria-live="polite" aria-atomic="true"><div class="d-flex"><div id="toastMessage" class="toast-body"></div><button type="button" class="btn-close me-3 m-auto" data-bs-dismiss="toast" aria-label="Cerrar mensaje"></button></div></div></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  <script src="assets/js/app.js" defer></script>
 </body>
 </html>
